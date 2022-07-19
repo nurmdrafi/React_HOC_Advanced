@@ -4,7 +4,7 @@ const HOC = (WrappedComponent, entity) => {
   return class extends Component {
     state = {
       data: [],
-      term: ""
+      term: "",
     };
     componentDidMount() {
       const fetchData = async () => {
@@ -18,14 +18,13 @@ const HOC = (WrappedComponent, entity) => {
     }
     render() {
       let { data, term } = this.state;
-      let filderedData = data.filter((d) => {
-        if (entity === "users") {
+      let filderedData = data.slice(0, 10).filter((d) => {
+        if (entity === "Users") {
           const { name } = d;
-          return name.indexOf(term) >= 0;
-        }
-        if (entity === "todos") {
+          return name.toLowerCase().indexOf(term) >= 0;
+        } else if (entity === "Todos") {
           const { title } = d;
-          return title.indexOf(term) >= 0;
+          return title.toLowerCase().indexOf(term) >= 0;
         }
       });
       return (

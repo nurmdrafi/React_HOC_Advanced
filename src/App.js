@@ -1,12 +1,12 @@
 import "./styles.css";
-import TodoList from "./TodoList";
-import UsersList from "./UsersList";
+import SearchTodos from "./TodoList_HOC";
+import SearchUsers from "./UsersList_HOC";
 
 export default function App() {
   return (
     <div className="App">
-      <UsersList />
-      <TodoList />
+      <SearchUsers />
+      <SearchTodos />
     </div>
   );
 }
