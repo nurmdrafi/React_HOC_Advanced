@@ -1,6 +1,6 @@
 import "./styles.css";
-import SearchTodos from "./TodoList_HOC";
-import SearchUsers from "./UsersList_HOC";
+import SearchUsers from "../src/components/UsersList";
+import SearchTodos from "../src/components/TodoList";
 
 export default function App() {
   return (
